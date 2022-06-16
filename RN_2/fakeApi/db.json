@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "dida",
+      "email": "mayu@gmail.com",
+      "bidang": "ketampanan",
+      "id": 1
+    },
+    {
+      "name": "handian",
+      "email": "handian@gmail.com",
+      "bidang": "Ketampanan",
+      "id": 2
+    },
+    {
+      "name": "albert",
+      "email": "albert@gmail.com",
+      "bidang": "Kerupawanan",
+      "id": 3
+    }
+  ]
+}

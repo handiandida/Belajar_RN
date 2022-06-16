@@ -8,6 +8,12 @@ import PositionReactNative from './pages/Position/Index'
 import PropsDinamis from './pages/PropsDinamis/Index'
 import StateDinamis from './pages/StateDinamis/Index'
 import Communication from './pages/Communication/Index'
+import BasicJavascript from './pages/BasicJavascript/Index'
+import ReactNativeSvg from './pages/ReactNativeSvg/Index'
+import CallApiVanilla from './pages/CallApiVanilla/Index'
+import CallApiAxios from './pages/CallApiAxios/Index'
+import LocalApi from './pages/LocalApi/Index'
+
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true)
@@ -26,7 +32,12 @@ const App = () => {
           {/* {isShow && <MateriFLexbox />} */}
           {/* <PropsDinamis /> */}
           {/* <StateDinamis /> */}
-          <Communication />
+          {/* <Communication /> */}
+          {/* <BasicJavascript /> */}
+          {/* <ReactNativeSvg /> */}
+          {/* <CallApiVanilla /> */}
+          {/* <CallApiAxios /> */}
+          <LocalApi />
         </ScrollView>
       </View>
     )
