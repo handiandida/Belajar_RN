@@ -4,13 +4,24 @@ import { welcomeAuth } from "../../assets";
 import { colors } from "../../utils";
 import ActionButton from "./ActionButton";
 
-const WelcomeAuth = () => {
+const WelcomeAuth = ({navigation}) => {
+    const handleGoto = screen => {
+        navigation.navigate(screen)
+    }
     return (
         <View style={styles.wrapper.page}>
             <Image source={welcomeAuth} style={styles.wrapper.illustration}/>
             <Text style={styles.text}>Selamat Datang di O-JOL</Text>
-            <ActionButton desc="Silahkan masuk, jika anda sudah memiliki akun" title="Masuk" />
-            <ActionButton desc="atau silahakan daftar jika anda belum meiliki akun" title="Daftar"/>
+            <ActionButton 
+            desc="Silahkan masuk, jika anda sudah memiliki akun" 
+            title="Masuk"
+            onPress={() => handleGoto('Login')}
+             />
+            <ActionButton 
+            desc="atau silahakan daftar jika anda belum meiliki akun" 
+            title="Daftar"
+            onPress={() => handleGoto('Register')}
+            />
         </View>
     )
 }
