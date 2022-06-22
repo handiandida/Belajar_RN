@@ -1,14 +1,18 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
+import { Provider } from 'react-redux'
 import Router from './router'
+import store from './redux/store'
 
 export class App extends Component {
   render() {
     return (
-      <NavigationContainer>
-        <Router />
-      </NavigationContainer>
+      <Provider store={store} >
+        <NavigationContainer>
+          <Router />
+        </NavigationContainer>
+      </Provider>
     )
   }
 }

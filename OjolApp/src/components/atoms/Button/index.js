@@ -1,9 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { colors } from '../../../utils';
+import ButtonIcon from './ButtonIcon';
 
-const Button = ({ title, onPress }) => {
+const Button = ({ title, onPress, type, name }) => {
+  if (type === 'icon') {
+    return <ButtonIcon name={name} onPress={onPress} />
+  }
   return (
     <TouchableOpacity style={styles.wrapper.component} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
