@@ -1,9 +1,14 @@
-import {StyleSheet, ImageBackground, SafeAreaView} from 'react-native';
+import {
+  StyleSheet,
+  ImageBackground,
+  SafeAreaView,
+  StatusBar,
+} from 'react-native';
 import React, {useState} from 'react';
 import StartGameScreen from './screens/StartGameScreen';
 import LinearGradient from 'react-native-linear-gradient';
 import GameScreen from './screens/GameScreen';
-import Colors from './constants/color';
+import Colors from './constants/colors';
 import GameOverScreen from './screens/GameOverScreen';
 
 export default function App() {
@@ -18,7 +23,7 @@ export default function App() {
 
   function gameOverHandler(numberOfRounds) {
     setGameIsOver(true);
-    setGuessRounds(numberOfRounds)
+    setGuessRounds(numberOfRounds);
   }
 
   function startNewGameHandler() {
@@ -45,17 +50,21 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      colors={[Colors.primary700, Colors.accent500]}
-      style={styles.rootScreen}>
-      <ImageBackground
-        source={require('../src/assets/images/dice.jpg')}
-        resizeMode="cover"
-        style={styles.rootScreen}
-        imageStyle={styles.backgroundImage}>
-        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+    // <>
+    //   <StatusBar style="light">
+        <LinearGradient
+          colors={[Colors.primary700, Colors.accent500]}
+          style={styles.rootScreen}>
+          <ImageBackground
+            source={require('../src/assets/images/dice.jpg')}
+            resizeMode="cover"
+            style={styles.rootScreen}
+            imageStyle={styles.backgroundImage}>
+            <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+          </ImageBackground>
+        </LinearGradient>
+    //   </StatusBar>
+    // </>
   );
 }
 
