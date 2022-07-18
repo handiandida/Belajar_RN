@@ -11,7 +11,7 @@ import {launchCamera} from 'react-native-image-picker';
 import {Colors} from '../../constants/colors';
 import OutlinedButton from '../UI/OutlinedButton';
 
-export default function ImagePicker() {
+export default function ImagePicker({onTakeImage}) {
   const [pickedImage, setPickedImage] = useState(null);
 
   const takeImagehandler = () => {
@@ -28,24 +28,26 @@ export default function ImagePicker() {
       } else {
         const data = res.assets[0];
         setPickedImage(data);
-        console.log(data);
+        onTakeImage(data);
       }
     });
   };
 
   let imagePreview = <Text>No image taken yet.</Text>;
 
-  {pickedImage != null && (
-    imagePreview = <Image
-      source={{uri: pickedImage.uri}}
-      style={styles.image}
-    />
-  )}
+  {
+    pickedImage != null &&
+      (imagePreview = (
+        <Image source={{uri: pickedImage.uri}} style={styles.image} />
+      ));
+  }
 
   return (
     <View>
       <View style={styles.imagePreview}>{imagePreview}</View>
-      <OutlinedButton icon="camera" onPress={takeImagehandler}>Take Image</OutlinedButton>
+      <OutlinedButton icon="camera" onPress={takeImagehandler}>
+        Take Image
+      </OutlinedButton>
     </View>
   );
 }
@@ -59,9 +61,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.primary100,
     borderRadius: 4,
+    overflow: 'hidden',
   },
   image: {
     width: '100%',
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
