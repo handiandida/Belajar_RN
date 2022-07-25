@@ -12,7 +12,7 @@ export class App extends Component {
     return (
       <View style={styles.container}>
         <Button title='Test App' onPress={this.handler} />
-        <Button title='Coba' onPress={() => Linking.openSettings() }/>
+        <Button title='Coba App' onPress={() => Linking.openSettings() }/>
         <Button title='opensetting' onPress={() => AndroidOpenSettings.appDetailsSettings() }/>
       </View>
     )
