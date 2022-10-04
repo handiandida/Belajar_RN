@@ -34,12 +34,102 @@
 //   }
 // }
 
-.main {
-  &-heading {
-    font-size: 2em;
-  }
+// .main {
+//   & &-heading {
+//     font-size: 2em;
+//   }
 
-  &-paragraph {
-    font-size: 1.4em;
+//   & &-paragraph {
+//     font-size: 1.4em;
+//   }
+// }
+
+// .footer {
+//   & &-heading {
+//     font-size: 2em;
+//   }
+
+//   & &-paragraph {
+//     font-size: 1.4em;
+//   }
+// }
+
+// :root {
+//   --primary-color: #f4f1de;
+//   --secondary-color: #f2cc8f;
+//   --text-color: #e07a5f;
+// }
+
+// body {
+//   background-color: var(--primary-color);
+// }
+
+// h1 {
+//   color: var(--text-color);
+// }
+
+// p {
+//   color: var(--text-color);
+// }
+
+//SAAS Variables
+// $secondary-color: #f2cc8f;
+// $text-color: #e07a5f;
+// $primary-color: green;
+
+// body {
+//   $primary-color: #f4f1de !global;
+//   background-color: $primary-color;
+// }
+
+// h1 {
+//   color: $primary-color;
+// }
+
+// p {
+//   color: $text-color;
+// }
+
+//MAP
+// $alert: (
+//   "danger": red,
+//   "success": green,
+//   "warning": yellow,
+// );
+
+// h1 {
+//   color: map-get($alert, "success");
+// }
+
+//Mixin
+@mixin inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+
+.header ul {
+  @include inline-list();
+  li {
+    background-color: black;
+    padding: 0.7em;
+  }
+  a {
+    color: white;
+  }
+}
+
+.footer ul {
+  @include inline-list();
+  li {
+    padding: 0.4em;
+    background-color: salmon;
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 }
