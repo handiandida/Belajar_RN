@@ -101,35 +101,160 @@
 //   color: map-get($alert, "success");
 // }
 
-//Mixin
-@mixin inline-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  li {
-    display: inline-block;
-  }
+// @import "modules/mixin";
+// @import "modules/header";
+// @import "modules/container";
+// @import "modules/footer";
+
+// @import "modules/mixin", "modules/header", "modules/container", "modules/footer";
+
+// @use "modules/header";
+// @use "modules/container";
+// @use "modules/footer";
+
+// body {
+//   min-height: 100px;
+// }
+
+// //if
+// @mixin profile-pic($size, $cirlce: false) {
+//   width: $size;
+//   height: $size;
+//   border: 5px solid white;
+//   box-shadow: 1px 1px 3px rgba($color: #000000, $alpha: 0.3);
+
+//   @if $cirlce {
+//     border-radius: 50%;
+//   }
+// }
+
+// .square-profile {
+//   @include profile-pic(200px, $cirlce: false);
+// }
+
+// .circle-profile {
+//   @include profile-pic(100px, $cirlce: true);
+// }
+
+// //else
+// $light-bg: #eaeaea;
+// $light-text: #333;
+// $dark-bg: #999;
+// $dark-text: #ddd;
+
+// @mixin color-mode($light-mode: true) {
+//   @if $light-mode {
+//     background-color: $light-bg;
+//     color: $light-text;
+//   } @else {
+//     background-color: $dark-bg;
+//     color: $dark-text;
+//   }
+// }
+
+// .nav {
+//   @include color-mode($light-mode: false);
+// }
+
+// //else if
+// @mixin triangle($size, $color, $direction) {
+//   width: 0;
+//   height: 0;
+//   background-color: transparent;
+//   border-color: transparent;
+//   border-style: solid;
+//   border-width: $size / 2;
+//   @if $direction == up {
+//     border-bottom-color: $color;
+//   } @else if $direction == right {
+//     border-left-color: $color;
+//   } @else if $direction == down {
+//     border-top-color: $color;
+//   } @else {
+//     border-right-color: $color;
+//   }
+// }
+
+// .right {
+//   @include triangle(2em, black, down);
+// }
+
+// for
+// $color: salmon;
+// .gradient {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   @for $i from 1 to 11 {
+//     li:nth-child(#{$i}) {
+//       padding: 4px;
+//       // background-color: lighten($color, $i * 2%);
+//       background-color: darken($color, $i * 2%);
+//     }
+//   }
+// }
+
+// //while
+// $color: salmon;
+// .gradient {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   $i: 1;
+//   @while $i < 11 {
+//     li:nth-child(#{$i}) {
+//       padding: 4px;
+//       background-color: lighten($color, $i * 2%);
+//     }
+//     $i: $i + 1;
+//   }
+// }
+
+// //each
+// $social-colors: (
+//   youtube: #ff0000,
+//   facebook: #3b5998,
+//   twitter: #1da1f2,
+//   instagram: #ffbf34,
+//   twitch: #8134af,
+// );
+
+// .socials {
+//   font-size: 2em;
+//   font-family: arial;
+//   font-weight: bold;
+//   @each $social, $color in $social-colors {
+//     .#{$social} {
+//       color: $color;
+//     }
+//   }
+// }
+
+//Base
+$warna-dasar: salmon;
+
+h1 {
+  color: $warna-dasar;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  text-align: center;
 }
 
-.header ul {
-  @include inline-list();
-  li {
-    background-color: black;
-    padding: 0.7em;
-  }
-  a {
-    color: white;
-  }
-}
+//Built-in Modules: Color
+// adjust-color($color,
+// $red: null, $green: null, $blue: null, $hue: null, $lightness: null,
+// $whiteness: null, $blackness: null, $alpha: null)
 
-.footer ul {
-  @include inline-list();
-  li {
-    padding: 0.4em;
-    background-color: salmon;
-    a {
-      color: white;
-      text-decoration: none;
-    }
-  }
+h1 {
+  // color: adjust-color($color: $warna-dasar, $green: 100, $blue: 100, $red: -50);
+  // color: adjust-hue($color: $warna-dasar, $degrees: -30deg);
+  // color: complement($color: $warna-dasar);
+  // color: darken($color: $warna-dasar, $amount: 10);
+  // color: lighten($color: $warna-dasar, $amount: 10);
+  // color: saturate($color: $warna-dasar, $amount: 100);
+  // color: desaturate($color: $warna-dasar, $amount: 100);
+  // color: grayscale($color: $warna-dasar);
+  // color: mix($warna-dasar, blue, 80%);
+  // color: fade-in(rgba(250, 128, 114, 0.2), $amount: 0.5);
+  // color: fade-out($color: $warna-dasar, $amount: 0.6);
 }
